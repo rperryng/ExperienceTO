@@ -1,6 +1,6 @@
 var express = require('express'),
     exphbs = require('express-handlebars'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
 mongoose.connect('mongodb://localhost:27017/ExperienceTO')

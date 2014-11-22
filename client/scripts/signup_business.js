@@ -34,6 +34,10 @@
     function onFileSelect($file) {
       console.log('on file selected', $file);
 
+      if (!$file) {
+        return;
+      }
+
       vm.uploadedFile = signupBusinessFactory.uploadImage($file)
         .then(function () {
           console.log('success');
