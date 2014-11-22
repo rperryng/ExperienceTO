@@ -5,8 +5,6 @@ var app = module.exports = express();
 app.set('views', __dirname);
 
 app.get('/', function (req, res) {
-  res.render('signup_user', {
-    title: 'ExperienceTO'
-  });
+  res.render('signup_user');
 });
 

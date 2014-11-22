@@ -1,9 +1,14 @@
 var express = require('express'),
     exphbs = require('express-handlebars'),
+    mongoose = require('mongoose');
     bodyParser = require('body-parser');
+
+mongoose.connect('mongodb://localhost:27017/ExperienceTO')
 
 // subapps
 var registerConsumer = require('./server/components/signup_user');
+var registerBusiness = require('./server/components/signup_business');
+var registerBusinessApi = require('./server/api/businesses');
 
 var app = express();
 
@@ -26,6 +31,8 @@ app.set('view engine', 'hbs');
 
 // conmponent middleware
 app.use(registerConsumer);
+app.use(registerBusiness);
+app.use(registerBusinessApi);
 
 // No other middlware handled the request, send a 404
 app.use(function (req, res) {

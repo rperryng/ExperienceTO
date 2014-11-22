@@ -14,13 +14,26 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
   <script type="text/javascript" src="/client/vendor/angular-bootstrap.js"></script>
 
-  <script type="text/javascript" src="{{page_script}}"></script>
+  <!-- custom -->
 
-  <title>{{title}}</title>
+  <script type="text/javascript" src="{{script_src}}"></script>
+  <link rel="stylesheet" href="/client/styles/theme.css">
+  <link rel="stylesheet" href="/client/styles/util.css">
+
+  <title>
+    {{#if title}}
+      {{title}}
+    {{else}}
+      ExperienceTO
+    {{/if}}
+
+  </title>
 </head>
 
 <body>
-  {{{body}}}
+  <main>
+    {{{body}}}
+  </main>
 </body>
 
 </html>
