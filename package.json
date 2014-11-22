@@ -1,0 +1,16 @@
+{
+  "name": "learning-passport-services",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ryan Perry-Nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.9.3",
+    "express": "^4.10.2",
+    "express-handlebars": "^1.1.0"
+  }
+}
