@@ -15,3 +15,7 @@ app.post('/api/signup/businesses', function (req, res) {
     res.sendStatus(200);
   });
 });
+
+app.post('/api/signup/businesses/image/:id', function (req, res) {
+
+});

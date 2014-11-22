@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('signupBusiness', []);
+  angular.module('signupBusiness', ['angularFileUpload']);
 })();
 
 (function () {
@@ -17,15 +17,28 @@
     var vm = this;
 
     vm.submit = submit;
+    vm.onFileSelect = onFileSelect;
+    vm.uploadedFile = undefined;
 
     //////////
 
     function submit() {
-      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone)
+      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile)
         .then(function () {
           console.log('good');
         }, function () {
           console.log('not good');
+        });
+    }
+
+    function onFileSelect($file) {
+      console.log('on file selected', $file);
+
+      vm.uploadedFile = signupBusinessFactory.uploadImage($file)
+        .then(function () {
+          console.log('success');
+        }, function () {
+          console.log('failed');
         });
     }
   }
@@ -38,11 +51,12 @@
     .module('signupBusiness')
     .factory('signupBusinessFactory', signupBusinessFactory);
 
-  signupBusinessFactory.$inject = ['$q', '$http'];
+  signupBusinessFactory.$inject = ['$q', '$http', '$upload'];
 
-  function signupBusinessFactory($q, $http) {
+  function signupBusinessFactory($q, $http, $upload) {
     var factory = {
-      registerBusiness: registerBusiness
+      registerBusiness: registerBusiness,
+      uploadImage: uploadImage
     };
 
     var ENDPOINT = '/api/signup/businesses';
@@ -66,6 +80,27 @@
         .error(function (response) {
           deferred.reject();
         });
+
+      return deferred.promise;
+    }
+
+    function uploadImage(business, image) {
+      var deferred = $q.defer();
+      var url = ENDPOINT + '/image/' + business;
+
+      $upload.upload({
+        url: url,
+        file: image
+
+      }).progress(function (evt) {
+        console.log('... ' + parseInt((100 * evt.loaded) / evt.total));
+      }).success(function (data) {
+        deferred.resolve();
+        console.log('done uploading image');
+      }).error(function (err) {
+        deferred.reject();
+        console.log('err...', err);
+      });
 
       return deferred.promise;
     }
