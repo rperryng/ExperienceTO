@@ -3,7 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost:27017/ExperienceTO')
+mongoose.connect('mongodb://104.236.63.85:27017/ExperienceTO')
 
 // subapps
 var registerConsumer = require('./server/components/signup_user');
@@ -39,8 +39,8 @@ app.use(function (req, res) {
   res.sendStatus(404);
 });
 
-var port = 3000;
+var port = 80;
 app.listen(port, function () {
-  console.log('business ideas happen at port', 3000);
+  console.log('business ideas happen at port', port);
 });
 
