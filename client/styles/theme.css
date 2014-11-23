@@ -24,7 +24,7 @@ h1 {
   margin: 0 auto;
   position: relative;
   top: -70px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .bg-orange {
@@ -51,4 +51,19 @@ h1 {
 
 .logo > img  {
   max-width: 45%;
+}
+
+
+/*----Media Queries----*/
+
+@media (min-width: @screen-sm-min) {
+  .circle-bar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px; 
+    padding-top: 10px;
+  } 
+  .bg-orange {
+  background: red;
+  }
 }
