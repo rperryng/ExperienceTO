@@ -11,18 +11,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 36px;
 }
 
 p {
 	line-height: 1.8em;
 }
 
+a:link, a:visited {
+	color: #D75D31;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	opacity: 0.8;
+}
+
 .logo-svg {
 	text-align: center;
 	position: relative;
 	position: absolute;
-	top: 30%;
+	top: 25%;
 	left: 50%;
 	transform: translateY(-50%); /* This would be overwritten */
 	transform: translateX(-50%); /* By this.. */
@@ -95,15 +104,28 @@ btn-primary {
 	max-width: 45%;
 }
 
+/*MENU*/
+
+
+
 /*LANDING PAGE - ABOUT SECTION*/
 
 .about {
 	background: #FFF;
+	text-align: center;
 }
 
 .about h1 {
 	margin-top: 50px;
 	color: #D75D31;
+}
+
+.about h2 {
+	font-family: 'Roboto Slab';
+}
+
+.about p {
+	font-size: 1.5em;
 }
 
 /*LANDING PAGE - FEATURES SECTION*/
@@ -114,16 +136,62 @@ btn-primary {
 	background: #EEE;
 }
 
+.features h2 {
+	font-family: 'Roboto Slab';
+}
+
 .feature-icon {
 	color: #D75D31;
+}
+
+/* LANDING PAGE - CALL TO ACTION*/
+
+.call-to-action {
+	margin-top: 50px;
+}
+
+.call-to-action h1 {
+	color: #D75D31;
+	text-align: center;
+}
+
+.call-to-action h2 {
+	font-family: 'Roboto Slab';
+	font-size: 1.5em;
+}
+
+.register {
+	padding: 50px;
+	border: 1px solid #EEE;
+	margin-top: 25px;
+}
+
+button {
+  background: #D75D31;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #589B1E;
+}
+
+button a:link, button a:visited, button a:hover, button a:visited {
+	color: #FFF;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
 /*FOOTER*/
 
 footer {
 	background: #666;
-	color: #FFF;
-	/*margin-top: 50px;*/
+	color: #CCC;
+	margin-top: 50px;
 	padding: 25px;
 }
 
@@ -144,13 +212,55 @@ footer h5 {
 footer h1 {
 	font-size: 12px;
 	padding-bottom: 10px;
+}
+
+footer a:link, footer a:visited {
+  color: #FFF;
+}
+
+footer a:hover, footer a:active {
+  color: #CCC;
+}
+
+.statistics {
+	padding: 25px 0;
+	border-top: 1px dotted #CCC;
+  border-bottom: 1px dotted #CCC;
+}
+
+.twitter-feed {
+	margin-top: 50px;
+	padding: 0 130px 35px 130px;
 	border-bottom: 1px dotted #CCC;
 }
 
-.col-md-2 {
+.dotted-right {
 	border-right: 1px dotted #CCC;
 }
 
+.copyright {
+	padding: 50px 0;
+	font-size: 10px;
+}
+
+.p-bg {
+	width: 100%;
+	height: 500px;
+	background: url('/client/assets/images/stock/balloon_sm.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	background-attachment: fixed;
+}
+.p-bg-2 {
+	width: 100%;
+	height: 500px;
+	background: url('/client/assets/images/stock/lake_sm.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	background-attachment: fixed;
+}
 
 /*----Media Queries----*/
 
