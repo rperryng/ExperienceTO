@@ -9,6 +9,7 @@ var express = require('express'),
 var registerConsumer = require('./server/components/signup_user');
 var registerBusiness = require('./server/components/signup_business');
 var registerBusinessApi = require('./server/api/businesses');
+var landingPage = require('./server/components/landing_page');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.set('view engine', 'hbs');
 app.use(registerConsumer);
 app.use(registerBusiness);
 app.use(registerBusinessApi);
+app.use(landingPage);
 
 // No other middlware handled the request, send a 404
 app.use(function (req, res) {

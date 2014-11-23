@@ -4,7 +4,7 @@ var app = module.exports = express();
 
 app.set('views', __dirname);
 
-app.get('/', function (req, res) {
+app.get('/signup/user', function (req, res) {
   res.render('signup_user');
 });
 
