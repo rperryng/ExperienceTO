@@ -145,12 +145,6 @@
           }
 
           map.fitBounds(bounds);
-
-          google.mps.event.addListenerOnce(map, "idle", function () {
-            if (places.length === 1) {
-              map.setZoom();
-            }
-          });
         });
 
         if (navigator.geolocation) {
