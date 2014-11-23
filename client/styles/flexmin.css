@@ -2,7 +2,7 @@
 	margin: 0 auto;
 	width: 100vw;
 	height: 400px;
-  max-width: 1280px;
+  /*max-width: 1280px;*/
   border-bottom: 10px solid #D75D31;
   overflow: hidden;
 }
@@ -72,7 +72,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 100vw;
 		height: 500px;
 		background-image: linear-gradient(to bottom, #888, #222);
 		opacity: 0.4;
@@ -81,11 +81,14 @@
 
 	/*FLEXSLIDER*/
 
-.flexslider, .flexslider-controls {
+.flexslider {
 	margin: 0 auto;
-	width: 100%;
-  max-width: 1280px;
-  overflow: hidden;
+	width: 100vw;
+  /*max-width: 1280px;*/
+}
+
+.flexslider-controls {
+
 }
 
 .slide-text {
