@@ -91,7 +91,7 @@
             });
 
             map.setCenter(pos);
-            map.setZoom(16);
+            map.setZoom(14);
           }, function () {
             handleNoGeolocation(true);
           });
