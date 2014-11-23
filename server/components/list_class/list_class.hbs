@@ -21,19 +21,22 @@
 
   <div class="container-fluid">
     <div class="listClasses-view row" ng-app="listClasses" ng-controller="listClassesController as listClass">
-      <div class="col-md-1"></div>
+      <div class="col-md-1 hidden-sm"></div>
       <div ng-repeat="class in listClass.classes">
         <div class="col-md-2 text-center">
-          <img ng-src="http://exploreto.co\{{class.pictureUrl}}" />
-          <span><h3>\{{class.name}} -</h3></span>
+          <img class="class-img" ng-src="http://exploreto.co\{{class.pictureUrl}}" />
+          <div class="class-name text-center">
+            <div class="class-text"><h3>\{{class.name}} -</h3></span></div>
+          </div>
           <div class="minutes">\{{class.duration}} minutes</div>
-          <div>\{{class.description | limitTo: 140}}</div>
+          <div class="desc-class">\{{class.description | limitTo: 140}}</div>
           <hr>
           <div class="button-group">
-            <div class="btn btn-primary pull-left sub-but"><i class="fa fa-check-square-o"></i> Select</div>
-            <div class="btn btn-primary pull-left sub-but"><i class="fa fa-gift"></i> Gift</div>
-            <div class="clear-both"></div>
+            <div class="btn btn-primary sub-but"><i class="fa fa-check-square-o"></i> Select</div>
+            <div class="btn btn-primary sub-but"><i class="fa fa-gift"></i> Gift</div>
+            <div class="clearfix"></div>
           </div>
+          <hr class="hidden-md">
         </div>
       </div>
     </div>

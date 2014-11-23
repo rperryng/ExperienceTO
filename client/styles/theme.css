@@ -45,9 +45,19 @@ a:hover, a:active {
   background: #D75D31;
   border: #b15D31;
 }
+
+.btn-primary:hover {
+  background: #A45D31;
+  border: #b15D31;
+}
+
 /*END BASE STYLES*/
 
 /*PICK YOUR COURSES*/
+.class-img {
+  height: 160px;
+}
+
 .class-row:nth-child(even) {
   background: #EEE;
 }
@@ -74,13 +84,25 @@ a:hover, a:active {
 
 .sub-but {
   margin-left: 10px;
-  width: 85px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .button-group {
   margin: 0 auto;
+  width: 100%;
 }
 
+.class-name {
+  height: 80px;
+  display: table;
+}
+
+.class-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
 .desc-class {
   height: 100px;
   overflow: hidden;
@@ -372,10 +394,17 @@ footer a:hover, footer a:active {
   color: white;
   text-align: center;
   }
+
+  .pick-course-head {
+    height: 400px;
+  }
 }
 
 @media (max-width: 990px) {
 
+  .class-img {
+    margin-top: 20px;
+  }
   .copyright {
     padding: 20px 0;
     font-size: 10px;
@@ -399,6 +428,10 @@ footer a:hover, footer a:active {
   .copyright {
     padding: 0px 0;
     font-size: 10px;
+  }
+
+  .pick-course-head {
+    height: 600px;
   }
 
   .bus-sign-head  {
