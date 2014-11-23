@@ -67,6 +67,12 @@ p {
 .button-group {
   margin: 0 auto;
 }
+
+.desc-class {
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /*BUSINESS VIEW SIGN-UP*/
 
 .signupBusiness-view {
