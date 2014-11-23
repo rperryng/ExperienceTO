@@ -20,6 +20,8 @@
     vm.onFileSelect = onFileSelect;
     vm.uploadedFile = undefined;
 
+    var _markers = [];
+
     activate();
 
     //////////
@@ -71,7 +73,7 @@
 
       function initaliseGoogle() {
 
-        var markers = [];
+        _markers = [];
         var mapOptions = {
           scrollwheel: false,
           mapTypeControl: false,
@@ -94,23 +96,23 @@
             return;
           }
 
-          for (var i = 0, marker; marker = markers[i]; i++) {
+          for (var i = 0, marker; marker = _markers[i]; i++) {
             marker.setMap(null);
           }
 
           // For each place, get the icon, place name, and location.
-          markers = [];
+          _markers = [];
           var bounds = new google.maps.LatLngBounds();
           for (var i = 0, place; place = places[i]; i++) {
 
             // Create a marker for each place.
-            var marker = new google.maps.Marker({
+            marker = new google.maps.Marker({
               map: map,
               title: place.name,
               position: place.geometry.location
             });
 
-            markers.push(marker);
+            _markers.push(marker);
 
             bounds.extend(place.geometry.location);
 
@@ -151,6 +153,9 @@
               position: location,
               map: map
             });
+
+            _markers.push(marker);
+
 
             vm.latitude = position.coords.latitude;
             vm.longitude = position.coords.longitude;
