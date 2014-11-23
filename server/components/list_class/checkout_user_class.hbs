@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="checkoutUserClass-view" ng-app="checkoutUserClass" ng-controller="CheckoutUserClassController as checkoutUserClass">
+    <form ng-show="!checkoutUserClass.sent">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>User Code:</label>
+            <input class="form-control" type="text" placeholder="user code" ng-model="checkoutUserClass.userCode">
+          </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn btn-primary w100" type="submit" ng-click="checkoutUserClass.checkCode()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
