@@ -29,7 +29,20 @@
     }
 
     function submit() {
-      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile, vm.about)
+      var data = {
+        name: vm.name,
+        email: vm.email,
+        phone: vm.phone,
+        postalCode: vm.postalCode,
+        pictureUrl: vm.imageSource,
+        description: vm.about,
+        latitude: vm.latitude,
+        longitude: vm.longitude
+      };
+
+      console.log('collected data is', data);
+
+      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile, vm.about, vm.latitude, vm.longitude)
         .then(function () {
           console.log('good');
         }, function () {
@@ -100,8 +113,22 @@
 
             if (places.length === 1) {
               var markerPosition = marker.getPosition();
+              console.log(places[0]);
+
+              var postalCodeRegexp = /\w\d\w\s\d\w\d/;
+              var postalCode = postalCodeRegexp.exec(places[0].formatted_address)[0];
+
+              var addressRegexp = /([^,]*)/;
+              var address = addressRegexp.exec(places[0].formatted_address);
+              console.log('address', address);
+
+              vm.name = places[0].name;
+              vm.phone = places[0].formatted_phone_number;
+              vm.address = address[0];
+              vm.postalCode = postalCode;
               vm.latitude = markerPosition.k;
               vm.longitude = markerPosition.B;
+              $scope.$apply();
             }
           }
 
@@ -171,13 +198,15 @@
 
     //////////
 
-    function registerBusiness(companyName, email, phone, about) {
+    function registerBusiness(companyName, email, phone, about, latitude, longitude) {
       var deferred = $q.defer();
       var data = {
         name: companyName,
         email: email,
         phone: phone,
-        description: about
+        description: about,
+        latitude: latitude,
+        longitude: longitude
       };
 
       $http.post(ENDPOINT, data)
