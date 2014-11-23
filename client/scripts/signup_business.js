@@ -23,7 +23,7 @@
     //////////
 
     function submit() {
-      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile)
+      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile, vm.about)
         .then(function () {
           console.log('good');
         }, function () {
@@ -69,12 +69,13 @@
 
     //////////
 
-    function registerBusiness(companyName, email, phone) {
+    function registerBusiness(companyName, email, phone, about) {
       var deferred = $q.defer();
       var data = {
         name: companyName,
         email: email,
-        phone: phone
+        phone: phone,
+        description: about
       };
 
       $http.post(ENDPOINT, data)

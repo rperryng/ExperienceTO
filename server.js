@@ -11,6 +11,7 @@ var registerBusiness = require('./server/components/signup_business');
 var registerBusinessClass = require('./server/components/list_class');
 var registerBusinessApi = require('./server/api/businesses');
 var registerBusinessPicture = require('./server/api/businessesImage');
+var landingPage = require('./server/components/landing_page');
 var registerClassApi = require('./server/api/classes');
 
 var app = express();
@@ -39,6 +40,7 @@ app.use(registerBusiness);
 app.use(registerBusinessClass);
 app.use(registerBusinessApi);
 app.use(registerBusinessPicture);
+app.use(landingPage);
 app.use(registerClassApi);
 
 // No other middlware handled the request, send a 404
