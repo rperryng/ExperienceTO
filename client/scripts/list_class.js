@@ -16,7 +16,7 @@
   function listClassesController($scope, $http) {
 	var vm = this;
 
-	$http.get('api/business/classes').success(function (data) {
+	$http.get('/api/business/classes').success(function (data) {
 		vm.classes = data;
 		console.log("success", data);
 	});
