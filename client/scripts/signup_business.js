@@ -119,12 +119,12 @@
               var postalCode = postalCodeRegexp.exec(places[0].formatted_address)[0];
 
               var addressRegexp = /([^,]*)/;
-              var address = addressRegexp.exec(places[0].formatted_address);
+              var address = addressRegexp.exec(places[0].formatted_address)[0];
               console.log('address', address);
 
               vm.name = places[0].name;
               vm.phone = places[0].formatted_phone_number;
-              vm.address = address[0];
+              vm.address = address;
               vm.postalCode = postalCode;
               vm.latitude = markerPosition.k;
               vm.longitude = markerPosition.B;
