@@ -23,16 +23,12 @@
     function activate() {
       listClassesFactory.getClasses()
         .then(function (classes) {
+        console.log(classes);
           vm.classes = classes;
         }, function () {
           console.log('couldn\'t get classes ...');
         });
     }
-
-    $http.get('api/business/classes').success(function (data) {
-      vm.classes = data;
-      console.log('success', data);
-    });
   }
 })();
 
@@ -56,7 +52,7 @@
 
     function getClasses() {
       var deferred = $q.defer();
-      var url = '/api/business/classes';
+      var url = '/api/businesses';
 
       $http.get(url)
         .success(function (data) {

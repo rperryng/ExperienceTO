@@ -12,7 +12,7 @@ var businessSchema = mongoose.Schema({
     unique: true
   },
   phone: {
-    type: Number,
+    type: String,
     required: true,
     unique: true
   },
@@ -20,7 +20,9 @@ var businessSchema = mongoose.Schema({
   category: String,
   latitude: Number,
   longitude: Number,
-  description: String
+  description: String,
+  postalCode: String,
+  pictureUrl: String
 });
 
 module.exports = mongoose.model('Business', businessSchema);

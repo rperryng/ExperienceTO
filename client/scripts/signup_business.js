@@ -42,9 +42,7 @@
         longitude: vm.longitude
       };
 
-      console.log('collected data is', data);
-
-      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile, vm.about, vm.latitude, vm.longitude)
+      signupBusinessFactory.registerBusiness(data)
         .then(function () {
           console.log('good');
         }, function () {
@@ -137,7 +135,21 @@
             }
           }
 
+          // Don't zoom in too far on only one marker
+          if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
+            var extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + 0.002, bounds.getNorthEast().lng() + 0.002);
+            var extendPoint2 = new google.maps.LatLng(bounds.getNorthEast().lat() - 0.002, bounds.getNorthEast().lng() - 0.002);
+            bounds.extend(extendPoint1);
+            bounds.extend(extendPoint2);
+          }
+
           map.fitBounds(bounds);
+
+          google.mps.event.addListenerOnce(map, "idle", function () {
+            if (places.length === 1) {
+              map.setZoom();
+            }
+          });
         });
 
         if (navigator.geolocation) {
@@ -200,22 +212,14 @@
       uploadImage: uploadImage
     };
 
-    var ENDPOINT = '/api/signup/businesses';
+    var ENDPOINT = '/api/businesses';
 
     return factory;
 
     //////////
 
-    function registerBusiness(companyName, email, phone, about, latitude, longitude) {
+    function registerBusiness(data) {
       var deferred = $q.defer();
-      var data = {
-        name: companyName,
-        email: email,
-        phone: phone,
-        description: about,
-        latitude: latitude,
-        longitude: longitude
-      };
 
       $http.post(ENDPOINT, data)
         .success(function (response) {
