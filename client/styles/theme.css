@@ -41,6 +41,10 @@ a:hover, a:active {
   z-index: 999;
 }
 
+.btn-primary {
+  background: #D75D31;
+  border: #b15D31;
+}
 /*END BASE STYLES*/
 
 /*PICK YOUR COURSES*/
@@ -75,6 +79,12 @@ a:hover, a:active {
 
 .button-group {
   margin: 0 auto;
+}
+
+.desc-class {
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /*BUSINESS VIEW SIGN-UP*/
 
