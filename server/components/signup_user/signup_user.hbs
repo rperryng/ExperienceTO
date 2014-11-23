@@ -1,6 +1,6 @@
 <div ng-app="ExploreTO" ng-controller="MainController as main">
 
-<!--  \{{main.firstName}} \{{main.lastName}} \{{main.city}}-->
+  <!--  \{{main.firstName}} \{{main.lastName}} \{{main.city}}-->
 
   <div class="container" style="padding-top: 60px;">
     <h1 class="page-header">Create Your Profile</h1>
@@ -81,25 +81,19 @@
               <input class="form-control" type="password">
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Interests</label>
-            <div class="col-md-8">
-              <!-- <tags-input ng-model="tags"></tags-input> -->
-              <input class="form-control" ng-model="tags" data-role="tagsinput">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input class="btn btn-primary" value="Save Changes" type="button">
-              <span></span>
-              <input class="btn btn-default" value="Cancel" type="reset">
-            </div>
-            <!-- .col-md-3.control-label -->
-          </div>
-          <!-- .form-group -->
-        </form>
       </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label"></label>
+        <div class="col-md-8">
+          <a href="/business">
+            <input class="btn btn-primary" value="Save Changes" type="button">
+            <span></span>
+            <input class="btn btn-default" value="Cancel" type="reset">
+        </div>
+        <!-- .col-md-3.control-label -->
+      </div>
+      <!-- .form-group -->
+      </form>
     </div>
   </div>
 </div>

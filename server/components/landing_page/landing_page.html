@@ -25,10 +25,17 @@
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <ul class="nav nav-pills">
-        <li><a class="navbar-brand" href="#"><img class="nav-logo" src="/client/assets/images/logo-white.png"></a></li>
-        <li role="presentation" ><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">About</a></li>
+        <li>
+          <a class="navbar-brand" href="#">
+            <img class="nav-logo" src="/client/assets/images/logo-white.png">
+          </a>
+        </li>
+        <li role="presentation"><a href="/">Home</a>
+        </li>
+        <li role="presentation"><a href="/signup/user">Profile</a>
+        </li>
+        <li role="presentation"><a href="#">About</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -41,39 +48,42 @@
         <img src="client/assets/images/logo-mockup.svg" alt="logo">
       </div>
 
-    <!-- .logo-svg -->
-    <div class="fixed">
-      <ul class="slides">
-        <li>
-          <!-- <img src="/client/assets/images/stock/balloon.jpg" /> -->
-          <div class="p-bg"></div>
-          <div class="slide-text">
-          </div>
-        </li>
-        <li>
-          <!-- <img src="/client/assets/images/stock/baseball.jpg" /> -->
-          <div class="p-bg-2"></div>
-        </li>
-        <li>
-          <!-- <img src="/client/assets/images/stock/DJ.jpg" /> -->
-          <div class="p-bg-3"></div>
-        </li>
-        <li>
-          <!-- <img src="/client/assets/images/stock/cooking.jpg" /> -->
-          <div class="p-bg-4"></div>
-        </li>
-      </ul>
+      <!-- .logo-svg -->
+      <div class="fixed">
+        <ul class="slides">
+          <li>
+            <!-- <img src="/client/assets/images/stock/balloon.jpg" /> -->
+            <div class="p-bg"></div>
+            <div class="slide-text">
+            </div>
+          </li>
+          <li>
+            <!-- <img src="/client/assets/images/stock/baseball.jpg" /> -->
+            <div class="p-bg-2"></div>
+          </li>
+          <li>
+            <!-- <img src="/client/assets/images/stock/DJ.jpg" /> -->
+            <div class="p-bg-3"></div>
+          </li>
+          <li>
+            <!-- <img src="/client/assets/images/stock/cooking.jpg" /> -->
+            <div class="p-bg-4"></div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
     <div class="row about">
       <div class="container">
         <div class="col-xs-12">
           <h1>How It Works</h1>
           <h2>5 unique Toronto experiences monthly. You choose one.</h2>
           <p>We are passionate about connecting Torontonians to unique experiences in the community. We want to showcase the amazing opportunities our city has to offer, and inspiring people to learn, do, and experience.</p>
-        </div> <!-- .col-xs-12 -->
-      </div> <!-- .container -->
-    </div> <!-- .row.about -->
+        </div>
+        <!-- .col-xs-12 -->
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- .row.about -->
 
     <div class="row features">
       <div class="container">
@@ -89,48 +99,50 @@
           <h2> <i class="fa fa-check feature-icon"></i> Experience It</h2>
           <p>Attend the class, workshop, activity, show, or experience that most excites you!</p>
         </div>
-      </div> <!-- .container -->
-    </div> <!-- .row.features -->
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- .row.features -->
 
 
     <div class="row call-to-action">
       <div class="container">
-          <h1>Sign Up Today</h1>
+        <h1>Sign Up Today</h1>
         <div class="col-md-6 register">
-        <h2><i class="fa fa-building-o"></i> Businesses</h2>
-        <p>Do you offer unique classes, workshops, activities, or experiences in Toronto?</p>
+          <h2><i class="fa fa-building-o"></i> Businesses</h2>
+          <p>Do you offer unique classes, workshops, activities, or experiences in Toronto?</p>
 
-        <p>Interested in partnering with us to help us connect you and our experience-hungry subscribers? </p>
+          <p>Interested in partnering with us to help us connect you and our experience-hungry subscribers?</p>
 
-        <p>Send us your contact information - we can't wait to talk!<br></p>
+          <p>Send us your contact information - we can't wait to talk!
+            <br>
+          </p>
           <button>
-            <a href="#">Sign Up your Business</a>
+            <a href="/signup/business">Sign Up your Business</a>
           </button>
         </div>
         <div class="col-md-6 register">
-        <h2><i class="fa fa-compass"></i> Explorers</h2>
-        <p>
-          5 unique Toronto experiences monthly.
-          You choose one.
-          Invite a friend & make it a date night option.
-          Share your feedback with us and the community!
+          <h2><i class="fa fa-compass"></i> Explorers</h2>
+          <p>
+            5 unique Toronto experiences monthly. You choose one. Invite a friend & make it a date night option. Share your feedback with us and the community!
           </p>
 
-        <p>
-          Plus...
-          One time “skip this month’s offerings” options.
-          Cancel any time – no contract, no commitment.
-          We work to provide you the experiences YOU want – tell us what you want to see!
-        </p>
+          <p>
+            Plus... One time “skip this month’s offerings” options. Cancel any time – no contract, no commitment. We work to provide you the experiences YOU want – tell us what you want to see!
+          </p>
           <button>
-            <a href="#">Buy Now as a Customer</a>
+            <a href="/signup/user">Buy Now as a Customer</a>
           </button>
         </div>
-      </div> <!-- .container -->
-    </div> <!-- .row.call-to-action -->
+      </div>
+      <!-- .container -->
+    </div>
+    <!-- .row.call-to-action -->
 
-      </div> <!-- .container -->
-    </div> <!-- .call-to-action -->
+    </div>
+    <!-- .container -->
+    </div>
+    <!-- .call-to-action -->
 
   </main>
 
@@ -138,9 +150,13 @@
     <div class="container">
       <div class="row hidden-xs">
         <h1>ExploreTO Statistics</h1>
-      </div> <!-- .row -->
+      </div>
+      <!-- .row -->
       <div class="row statistics hidden-xs">
-        <div class="col-md-2 col-sm-2 col-xs-offset-1 dotted-right"><h4>Team Members</h4><h5>9</h5></div>
+        <div class="col-md-2 col-sm-2 col-xs-offset-1 dotted-right">
+          <h4>Team Members</h4>
+          <h5>9</h5>
+        </div>
         <div class="col-md-2 col-sm-2 dotted-right">
           <h4>Team Members</h4>
           <h5>9</h5>
@@ -155,20 +171,30 @@
         </div>
         <div class="col-md-2 col-sm-2">
           <h4>Sudos</h4>
-          <h5>42</h5></div>
-      </div> <!-- .row -->
+          <h5>42</h5>
+        </div>
+      </div>
+      <!-- .row -->
 
       <div class="row twitter-feed hidden-sm hidden-xs">
-        <div class="col-md-11 col-xs-push-1"><p><a href="#">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate explicabo facilis ipsum, doloremque aliquid, totam reiciendis architecto nam velit, quam optio consequatur harum, quae eos aliquam atque labore at tempora." - <em>Explore TO</em></a></p></div>
-        <div class="col-md-1 col-md-pull-11"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></div>
-      </div> <!-- .row.twitter-feed -->
+        <div class="col-md-11 col-xs-push-1">
+          <p><a href="#">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate explicabo facilis ipsum, doloremque aliquid, totam reiciendis architecto nam velit, quam optio consequatur harum, quae eos aliquam atque labore at tempora." - <em>Explore TO</em></a>
+          </p>
+        </div>
+        <div class="col-md-1 col-md-pull-11"><a href="#"><i class="fa fa-twitter fa-3x"></i></a>
+        </div>
+      </div>
+      <!-- .row.twitter-feed -->
 
 
       <div class="row copyright">
-          <div class="col-xs-12"><p>&nbsp; Copyright 2014. Explore TO.</p>
-          </div> <!-- .row.copyright -->
+        <div class="col-xs-12">
+          <p>&nbsp; Copyright 2014. Explore TO.</p>
+        </div>
+        <!-- .row.copyright -->
       </div>
-    </div> <!-- .container -->
+    </div>
+    <!-- .container -->
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -178,10 +204,10 @@
   <script type="text/javascript" src="/client/vendor/angular-bootstrap.js"></script>
   <script type="text/javascript" src="/client/scripts/jquery.flexslider.js"></script>
   <script type="text/javascript" src="/client/scripts/jquery.flexslider-min.js"></script>
-    <script type="text/javascript" src="/client/scripts/ng-tags-input.js"></script>
+  <script type="text/javascript" src="/client/scripts/ng-tags-input.js"></script>
 
   <script>
-    $(window).load(function() {
+    $(window).load(function () {
       $('.flexslider').flexslider({
         animation: "fade"
       });
