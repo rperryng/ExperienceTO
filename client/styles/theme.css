@@ -4,11 +4,18 @@ h1 {
 
 .signupBusiness-view {
   margin: 0 auto;
-  max-width: 500px;
 }
 
 .main-view {
 
+}
+
+.w100 {
+  width: 100%;
+}
+
+btn-primary {
+  
 }
 
 .circle-icon {
@@ -25,6 +32,7 @@ h1 {
   position: relative;
   top: -70px;
   padding-top: 10px;
+  margin-bottom: -70px;
 }
 
 .bg-orange {
@@ -56,14 +64,40 @@ h1 {
 
 /*----Media Queries----*/
 
-@media (min-width: @screen-sm-min) {
+@media (max-width: 969px) {
   .circle-bar {
     border-radius: 50%;
     width: 80px;
     height: 80px; 
     padding-top: 10px;
+  }
+
+  .logo {
+    top: 25%;
   } 
-  .bg-orange {
-  background: red;
+
+  .logo > img  {
+    max-width: 50%;
+  }
+
+  .bus-sign-head  {
+    background: url('/client/assets/images/toronto-blur-small.jpg');
+    height: 300px;
+    border-bottom: 10px solid #D75D31;
+    background-position: top;
+  }
+  .circle-icon {
+  font-size: 30pt;
+  color: white;
+  text-align: center;
+  }
+}
+
+@media (max-width: 750px) {
+  .bus-sign-head  {
+    background: url('/client/assets/images/toronto-blur-mobile.jpg');
+  }
+    .logo > img  {
+    max-width: 70%;
   }
 }
