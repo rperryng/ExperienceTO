@@ -1,47 +1,82 @@
 /*BASE STYLES*/
 
 body {
-	font-family: 'Roboto Slab';
-	font-weight: 300;
-	color: #666;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  color: #666;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Megrim';
+  font-family: 'Megrim';
 }
 
 h1 {
-	font-size: 36px;
+  font-size: 36px;
 }
 
 p {
-	line-height: 1.8em;
+  line-height: 1.8em;
 }
 
 a:link, a:visited {
-	color: #D75D31;
-	text-decoration: none;
+  color: #D75D31;
+  text-decoration: none;
 }
 
 a:hover, a:active {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 .logo-svg {
-	text-align: center;
-	position: relative;
-	position: absolute;
-	top: 25%;
-	left: 50%;
-	transform: translateY(-50%); /* This would be overwritten */
-	transform: translateX(-50%); /* By this.. */
-	display: table-cell;
-	vertical-align: middle;
-	width: 40%;
-	z-index: 999;
+  text-align: center;
+  position: relative;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateY(-50%); /* This would be overwritten */
+  transform: translateX(-50%); /* By this.. */
+  display: table-cell;
+  vertical-align: middle;
+  width: 40%;
+  z-index: 999;
 }
 
 /*END BASE STYLES*/
+
+/*PICK YOUR COURSES*/
+.class-row:nth-child(even) {
+  background: #EEE;
+}
+
+.class-row {
+  padding: 20px 0;
+}
+
+.minutes {
+  width:100%;
+  border-top: 1px solid #272228;
+  border-bottom: 1px solid #272228;
+  margin: 2px 0;
+}
+
+.spacer-tb {
+  margin: 20px 0;
+}
+
+.large-text {
+  font-size: 16pt;
+  font-weight: 700;
+}
+
+.sub-but {
+  margin-left: 10px;
+  width: 85px;
+}
+
+.button-group {
+  margin: 0 auto;
+}
+/*BUSINESS VIEW SIGN-UP*/
 
 .signupBusiness-view {
   margin: 0 auto;
@@ -55,53 +90,60 @@ a:hover, a:active {
   width: 100%;
 }
 
-btn-primary {
-
-}
-
 .circle-icon {
-	font-size: 70pt;
-	color: white;
-	text-align: center;
+  font-size: 70pt;
+  color: white;
+  text-align: center;
 }
 
 .circle-bar {
-	border-radius: 50%;
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
-	position: relative;
-	top: -70px;
-	padding-top: 10px;
-	margin-bottom: -70px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  top: -70px;
+  padding-top: 10px;
+  margin-bottom: -70px;
 }
 
 .bg-orange {
-	background: #D75D31;
+  background: #D75D31;
 }
 
 .bus-sign-head  {
-	background: url('/client/assets/images/toronto-blur-small.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center bottom;
-	background-attachment: fixed;
-	height: 500px;
-	border-bottom: 10px solid #D75D31;
+  background: url('/client/assets/images/toronto-blur-small.jpg');
+  height: 500px;
+}
+
+.pick-course-head {
+  background: url('/client/assets/images/foodie.jpg');
+  color: white;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  padding: 35px;
+}
+
+.bus-sign-head, .pick-course-head {
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center bottom;
+  background-attachment: fixed;
+  border-bottom: 10px solid #D75D31;
 }
 
 /*HEADER*/
 
 .logo {
-	margin: 0 auto;
-	width: 100%;
-	text-align: center;
-	position: relative;
-	top: 35%;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 35%;
 }
 
 .logo > img  {
-	max-width: 45%;
+  max-width: 45%;
 }
 
 /*MENU*/
@@ -111,59 +153,59 @@ btn-primary {
 /*LANDING PAGE - ABOUT SECTION*/
 
 .about {
-	background: #FFF;
-	text-align: center;
+  background: #FFF;
+  text-align: center;
 }
 
 .about h1 {
-	margin-top: 50px;
-	color: #D75D31;
+  margin-top: 50px;
+  color: #D75D31;
 }
 
 .about h2 {
-	font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab';
 }
 
 .about p {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 /*LANDING PAGE - FEATURES SECTION*/
 
 .features {
-	margin-top: 50px;
-	padding: 50px 0;
-	background: #EEE;
+  margin-top: 50px;
+  padding: 50px 0;
+  background: #EEE;
 }
 
 .features h2 {
-	font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab';
 }
 
 .feature-icon {
-	color: #D75D31;
+  color: #D75D31;
 }
 
 /* LANDING PAGE - CALL TO ACTION*/
 
 .call-to-action {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 
 .call-to-action h1 {
-	color: #D75D31;
-	text-align: center;
+  color: #D75D31;
+  text-align: center;
 }
 
 .call-to-action h2 {
-	font-family: 'Roboto Slab';
-	font-size: 1.5em;
+  font-family: 'Roboto Slab';
+  font-size: 1.5em;
 }
 
 .register {
-	padding: 50px;
-	border: 1px solid #EEE;
-	margin-top: 25px;
+  padding: 50px;
+  border: 1px solid #EEE;
+  margin-top: 25px;
 }
 
 button {
@@ -181,37 +223,37 @@ button:hover {
 }
 
 button a:link, button a:visited, button a:hover, button a:visited {
-	color: #FFF;
-	text-transform: uppercase;
-	text-decoration: none;
+  color: #FFF;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 /*FOOTER*/
 
 footer {
-	background: #666;
-	color: #CCC;
-	margin-top: 50px;
-	padding: 25px;
+  background: #666;
+  color: #CCC;
+  margin-top: 20px;
+  padding: 25px;
 }
 
 footer h1, footer h2, footer h3, footer h4, footer h6 {
-	font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab';
 }
 
 footer h4 {
-	font-size: 1em;
-	text-align: center;
+  font-size: 1em;
+  text-align: center;
 }
 
 footer h5 {
-	font-size: 4em;
-	text-align: center;
+  font-size: 4em;
+  text-align: center;
 }
 
 footer h1 {
-	font-size: 12px;
-	padding-bottom: 10px;
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 
 footer a:link, footer a:visited {
@@ -223,43 +265,43 @@ footer a:hover, footer a:active {
 }
 
 .statistics {
-	padding: 25px 0;
-	border-top: 1px dotted #CCC;
+  padding: 25px 0;
+  border-top: 1px dotted #CCC;
   border-bottom: 1px dotted #CCC;
 }
 
 .twitter-feed {
-	margin-top: 50px;
-	padding: 0 130px 35px 130px;
-	border-bottom: 1px dotted #CCC;
+  margin-top: 50px;
+  padding: 0 130px 35px 130px;
+  border-bottom: 1px dotted #CCC;
 }
 
 .dotted-right {
-	border-right: 1px dotted #CCC;
+  border-right: 1px dotted #CCC;
 }
 
 .copyright {
-	padding: 50px 0;
-	font-size: 10px;
+  padding: 50px 0;
+  font-size: 10px;
 }
 
 .p-bg {
-	width: 100%;
-	height: 500px;
-	background: url('/client/assets/images/stock/balloon_sm.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center;
-	background-attachment: fixed;
+  width: 100%;
+  height: 500px;
+  background: url('/client/assets/images/stock/balloon_sm.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-attachment: fixed;
 }
 .p-bg-2 {
-	width: 100%;
-	height: 500px;
-	background: url('/client/assets/images/stock/lake_sm.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center;
-	background-attachment: fixed;
+  width: 100%;
+  height: 500px;
+  background: url('/client/assets/images/stock/lake_sm.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-attachment: fixed;
 }
 
 /*----Media Queries----*/
@@ -282,10 +324,14 @@ footer a:hover, footer a:active {
 
   .bus-sign-head  {
     background: url('/client/assets/images/toronto-blur-small.jpg');
+  }
+
+  .bus-sign-head, .pick-course-head {
     height: 300px;
     border-bottom: 10px solid #D75D31;
     background-position: top;
   }
+
   .circle-icon {
   font-size: 30pt;
   color: white;
@@ -301,3 +347,58 @@ footer a:hover, footer a:active {
     max-width: 70%;
   }
 }
+
+/* GOOGLE MAPS */
+#google-maps-view {
+ height: 400px;
+}
+
+.controls {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  padding: 0 11px 0 13px;
+  width: 400px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+  margin-left: -1px;
+  padding-left: 14px;  /* Regular padding-left + 1. */
+  width: 401px;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.signupBusiness-submit {
+  margin: 20px auto;
+}
+
+
