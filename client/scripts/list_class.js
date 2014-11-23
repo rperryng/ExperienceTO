@@ -78,6 +78,9 @@
 
   function activate() {
     var mapOptions = {
+      scrollwheel: false,
+      mapTypeControl: false,
+      scaleControl: false,
       zoom: 15
     };
 

@@ -73,6 +73,9 @@
 
         var markers = [];
         var mapOptions = {
+          scrollwheel: false,
+          mapTypeControl: false,
+          scaleControl: false,
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };

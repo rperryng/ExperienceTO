@@ -46,6 +46,10 @@
   <div class="signupBusiness-view" ng-app="signupBusiness" ng-controller="SignupBusinessController as signupBusiness">
     <form ng-show="!singupBusiness.sent">
       <div class="row">
+        <div class="google-maps-view--businessSignup">
+          <input id="pac-input" class="controls" type="text" placeholder="Where is your business located?">
+          <div id="google-maps-view"></div>
+        </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Company Name:</label>
@@ -80,10 +84,6 @@
         </div>
       </div>
       <img ng-src="\{{signupBusiness.imageSource}}">
-      <div>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="google-maps-view"></div>
-      </div>
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
           <button class="btn btn-primary w100 signupBusiness-submit" type="submit" ng-click="signupBusiness.submit()">Submit</button>
