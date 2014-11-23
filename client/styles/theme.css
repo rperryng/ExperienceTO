@@ -47,7 +47,9 @@ main {
   top: 25%;
   left: 50%;
   transform: translateY(-50%); /* This would be overwritten */
-  transform: translateX(-50%); /* By this.. */
+  transform: translateY(-50%); /* This would be overwritten */
+  -webkit-transform: translateY(-50%); /* This would be overwritten */
+  -webkit-transform: translateX(-50%); /* By this.. */
   display: table-cell;
   vertical-align: middle;
   width: 40%;
@@ -289,9 +291,9 @@ button a:link, button a:visited, button a:visited {
 /*USER PROFILE CREATION OR EDITING*/
 
 .upload-text h6 {
-	font-family: 'Roboto Slab';
-	color: #888;
-	/*text-transform: uppercase;*/
+  font-family: 'Roboto Slab';
+  color: #888;
+  /*text-transform: uppercase;*/
 }
 
 /*BOOSTRAP TAG INPUT*/
