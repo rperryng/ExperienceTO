@@ -27,6 +27,8 @@
     <script type="text/javascript" src="/client/scripts/fontawesome-markers.js"></script>
   {{/if}}
 
+  <script type="text/javascript" src="{{script_src}}"></script>
+
   <!-- Facebook -->
   {{#if facebook}}
     <script type="text/javascript" src="/client/lib/angular-facebook.js"></script>
@@ -34,7 +36,6 @@
   {{/if}}
 
   <!-- Alwas load page-specific script last, after all libraries loaded -->
-  <script type="text/javascript" src="{{script_src}}"></script>
 
   <title>
     {{#if title}}
@@ -52,7 +53,7 @@
         <ul class="nav nav-pills">
           <li><a class="navbar-brand" href="#"><img class="nav-logo" src="/client/assets/images/logo-white.png"></a></li>
           <li role="presentation" ><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="/signup/user">Profile</a></li>
           <li role="presentation"><a href="#">About</a></li>
         </ul>
       </div>

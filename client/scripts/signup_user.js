@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('ExploreTO', ['facebook', 'ngTagsInput']);
+  angular.module('ExploreTO', ['facebook']);
 })();
 
 (function () {
@@ -11,9 +11,9 @@
     .module('ExploreTO')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$scope', 'facebook', 'userSignupFactory', 'ngTagsInput'];
+  MainController.$inject = ['$scope', 'facebook', 'userSignupFactory'];
 
-  function MainController($scope, facebook, userSignupFactory, ngTagsInput) {
+  function MainController($scope, facebook, userSignupFactory) {
     var vm = this;
 
     console.log('listening');
