@@ -27,6 +27,19 @@ a:hover, a:active {
   opacity: 0.8;
 }
 
+main {
+  margin-top: 60px;
+}
+
+.nav {
+  padding-top: 10px;
+}
+
+.nav-logo {
+  height: 60px;
+  margin-top: -20px;
+}
+
 .logo-svg {
   text-align: center;
   position: relative;
@@ -46,6 +59,12 @@ a:hover, a:active {
   border: #b15D31;
 }
 /*END BASE STYLES*/
+
+/*NAV BAR*/
+.navbar-default {
+  background: #DBD2B3;
+  border: #DBD2B3;
+}
 
 /*PICK YOUR COURSES*/
 .class-row:nth-child(even) {
