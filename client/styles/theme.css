@@ -213,8 +213,8 @@ a:hover, a:active {
 }
 
 .register {
-	padding: 50px;
-	margin-top: 25px;
+  padding: 50px;
+  margin-top: 25px;
 }
 
 .register:last-child {
@@ -241,8 +241,8 @@ button a:hover {
 }
 
 button a:link, button a:visited, button a:visited {
-	text-transform: uppercase;
-	text-decoration: none;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 /*FOOTER*/
@@ -468,4 +468,11 @@ footer a:hover, footer a:active {
 
 .signupBusiness-submit {
   margin: 20px auto;
+}
+.googleMapsView--classList {
+  margin-top: 20px;
+}
+
+.google-maps-view--businessSignup {
+  margin-bottom: 20px;
 }
