@@ -20,6 +20,8 @@
     vm.onFileSelect = onFileSelect;
     vm.uploadedFile = undefined;
 
+    var _markers = [];
+
     activate();
 
     //////////
@@ -37,12 +39,11 @@
         pictureUrl: vm.imageSource,
         description: vm.about,
         latitude: vm.latitude,
-        longitude: vm.longitude
+        longitude: vm.longitude,
+        duration: 90
       };
 
-      console.log('collected data is', data);
-
-      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile, vm.about, vm.latitude, vm.longitude)
+      signupBusinessFactory.registerBusiness(data)
         .then(function () {
           console.log('good');
         }, function () {
@@ -71,7 +72,7 @@
 
       function initaliseGoogle() {
 
-        var markers = [];
+        _markers = [];
         var mapOptions = {
           scrollwheel: false,
           mapTypeControl: false,
@@ -94,23 +95,23 @@
             return;
           }
 
-          for (var i = 0, marker; marker = markers[i]; i++) {
+          for (var i = 0, marker; marker = _markers[i]; i++) {
             marker.setMap(null);
           }
 
           // For each place, get the icon, place name, and location.
-          markers = [];
+          _markers = [];
           var bounds = new google.maps.LatLngBounds();
           for (var i = 0, place; place = places[i]; i++) {
 
             // Create a marker for each place.
-            var marker = new google.maps.Marker({
+            marker = new google.maps.Marker({
               map: map,
               title: place.name,
               position: place.geometry.location
             });
 
-            markers.push(marker);
+            _markers.push(marker);
 
             bounds.extend(place.geometry.location);
 
@@ -135,6 +136,14 @@
             }
           }
 
+          // Don't zoom in too far on only one marker
+          if (bounds.getNorthEast().equals(bounds.getSouthWest())) {
+            var extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + 0.002, bounds.getNorthEast().lng() + 0.002);
+            var extendPoint2 = new google.maps.LatLng(bounds.getNorthEast().lat() - 0.002, bounds.getNorthEast().lng() - 0.002);
+            bounds.extend(extendPoint1);
+            bounds.extend(extendPoint2);
+          }
+
           map.fitBounds(bounds);
         });
 
@@ -151,6 +160,9 @@
               position: location,
               map: map
             });
+
+            _markers.push(marker);
+
 
             vm.latitude = position.coords.latitude;
             vm.longitude = position.coords.longitude;
@@ -195,22 +207,14 @@
       uploadImage: uploadImage
     };
 
-    var ENDPOINT = '/api/signup/businesses';
+    var ENDPOINT = '/api/businesses';
 
     return factory;
 
     //////////
 
-    function registerBusiness(companyName, email, phone, about, latitude, longitude) {
+    function registerBusiness(data) {
       var deferred = $q.defer();
-      var data = {
-        name: companyName,
-        email: email,
-        phone: phone,
-        description: about,
-        latitude: latitude,
-        longitude: longitude
-      };
 
       $http.post(ENDPOINT, data)
         .success(function (response) {
