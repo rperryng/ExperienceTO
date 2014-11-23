@@ -10,28 +10,43 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-2 col-xs-offset-3">
+    <div class="col-md-2 col-md-offset-3 col-xs-4">
       <div class="circle-bar bg-orange circle-icon">
         <i class="fa fa-compass"></i>
       </div>
     </div>
-    <div class="col-xs-2">
+    <div class="col-md-2 col-xs-4">
       <div class="circle-bar bg-orange circle-icon">
-        <i class="fa fa-users"></i></div>
+        <i class="fa fa-users"></i>
       </div>
-    <div class="col-xs-2">
+    </div>
+    <div class="col-md-2 col-xs-4">
       <div class="circle-bar bg-orange circle-icon">
-        <i class="fa fa-map-marker"></i></div>
+        <i class="fa fa-map-marker"></i>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="signupBusiness-view" ng-app="signupBusiness" ng-controller="SignupBusinessController as signupBusiness">
-        <form ng-show="!singupBusiness.sent">
+      <h1>
+        Register your business
+      </h1>
+      <p>
+        Shed everywhere bat tail flick hiss jump on the table, lick catnip attack jump lick. Biting I don't like that food attack your ankles shed everywhere catnip, scratched sleep on your keyboard climb the curtains chuf I don't like that food give me fish meow. Biting sleep in the sink lick claw hairball lay down in your way, claw lick sleep in the sink litter box. Chuf give me fish kittens sleep on your face litter box knock over the lamp, give me fish chase the red dot sleep on your keyboard bat zzz attack. Meow eat biting give me fish eat run, jump leap bat litter box I don't like that food I don't like that food. Stuck in a tree lay down in your way hairball chase the red dot, sleep in the sink scratched sleep on your face eat the grass sleep on your keyboard shed everywhere.
+      </p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="signupBusiness-view" ng-app="signupBusiness" ng-controller="SignupBusinessController as signupBusiness">
+    <form ng-show="!singupBusiness.sent">
+      <div class="row">
+        <div class="col-md-6">
           <div class="form-group">
             <label>Company Name:</label>
             <input class="form-control" type="text" placeholder="Company name" ng-model="signupBusiness.name">
@@ -40,6 +55,12 @@
             <label>E-mail:</label>
             <input class="form-control" type="text" placeholder="your@email.com" ng-model="signupBusiness.email">
           </div>
+          <div class="form-group">
+            <label>Tell us about your business and your offer:</label>
+            <textarea class="form-control" rows="4" ng-model="signupBusiness.about"></textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
           <div class="form-group">
             <label>Phone</label>
             <input class="form-control" type="tel" placeholder="" ng-model="signupBusiness.phone">
@@ -56,9 +77,13 @@
             <label>Company Logo</label>
             <input class="form-file" type="file" ng-file-select="signupBusiness.onFileSelect($file)">
           </div>
-          <button class="btn btn-primary" type="submit" ng-click="signupBusiness.submit()">Submit</button>
-        </form>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn btn-primary w100" type="submit" ng-click="signupBusiness.submit()">Submit</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
