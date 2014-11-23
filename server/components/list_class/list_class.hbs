@@ -1,16 +1,42 @@
-<div class="listClasses-view" ng-app="listClasses" ng-controller="listClassesController as listClass">
-	<div>
-		
-	</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 pick-course-head">
+      <h1> What tickles your fancy?</h1>
+      <p>5 unique Toronto experiences monthly.
+        <br>You choose one.
+        <br>Invite a friend & make it a date night options.
+        <br>Share your feedback with us and the community!</p>
+    </div>
+  </div>
+</div>
 
-	<div class="row">
-		<div class="col-md-4" style="max-width:300px;padding:20px" ng-repeat="class in listClass.classes">
-			<div class="text-center"><img ng-src="\{{class.class_logo}}"/></div>
-			<div class="text-center"><strong>
-				<span class="text-center">\{{class.name}} -</span>
-				<span>\{{class.duration}} minutes</span>
-			</strong></div>
-			<div>\{{class.description | limitTo: 140}}</div>
-		</div>
-	</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="large-text spacer-tb">Pick one of five classes below that interests you the most – Want to send it to a buddy? Gift it!</div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="listClasses-view row" ng-app="listClasses" ng-controller="listClassesController as listClass">
+    <div class="col-md-1"></div>
+    <div ng-repeat="class in listClass.classes">
+      <div class="col-md-2 text-center">
+        <img ng-src="\{{class.class_logo}}" />
+        <span><h3>\{{class.name}} -</h3></span>
+        <div class="minutes">\{{class.duration}} minutes</div>
+        <div>\{{class.description | limitTo: 140}}</div>
+        <hr>
+        <div class="button-group">
+          <div class="btn btn-primary pull-left sub-but"><i class="fa fa-check-square-o"></i> Select</div>
+          <div class="btn btn-primary pull-left sub-but"><i class="fa fa-gift"></i> Gift</div>
+          <div class="clear-both"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="map-canvas">
 </div>
