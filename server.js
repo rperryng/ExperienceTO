@@ -8,7 +8,9 @@ mongoose.connect('mongodb://localhost:27017/ExperienceTO')
 // subapps
 var registerConsumer = require('./server/components/signup_user');
 var registerBusiness = require('./server/components/signup_business');
+var registerBusinessClass = require('./server/components/list_class');
 var registerBusinessApi = require('./server/api/businesses');
+var registerClassApi = require('./server/api/classes');
 
 var app = express();
 
@@ -32,7 +34,9 @@ app.set('view engine', 'hbs');
 // conmponent middleware
 app.use(registerConsumer);
 app.use(registerBusiness);
+app.use(registerBusinessClass);
 app.use(registerBusinessApi);
+app.use(registerClassApi);
 
 // No other middlware handled the request, send a 404
 app.use(function (req, res) {
