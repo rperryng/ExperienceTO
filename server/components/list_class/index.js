@@ -6,7 +6,8 @@ app.set('views', __dirname);
 
 app.get('/business', function (req, res) {
   res.render('list_class', {
-    title: 'Available Classes',
-    script_src: '/client/scripts/list_class.js'
+    googleMaps: true,
+    script_src: '/client/scripts/list_class.js',
+    title: 'Available Classes'
   });
 });

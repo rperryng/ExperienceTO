@@ -7,15 +7,34 @@
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <!-- Vendor -->
-
+  <!-- Styles and fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Megrim' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Megrim" rel="stylesheet" type="text/css">
 
   <!-- custom -->
   <link rel="stylesheet" href="/client/styles/theme.css">
   <link rel="stylesheet" href="/client/styles/util.css">
+
+  <script type="text/javascript" src="/client/vendor/angular-file-upload-shim.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+  <script type="text/javascript" src="/client/vendor/angular-file-upload.min.js"></script>
+  <script type="text/javascript" src="/client/vendor/angular-bootstrap.js"></script>
+
+  <!-- Google maps -->
+  {{#if googleMaps}}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6qAklH9vlA9zpwQOFkqrZmdzORMrPsE&libraries=places"></script>
+    <script type="text/javascript" src="/client/scripts/fontawesome-markers.js"></script>
+  {{/if}}
+
+  <!-- Facebook -->
+  {{#if facebook}}
+    <script type="text/javascript" src="/client/lib/angular-facebook.js"></script>
+    <script type="text/javascript" src="/client/lib/app.config.js"></script>
+  {{/if}}
+
+  <!-- Alwas load page-specific script last, after all libraries loaded -->
+  <script type="text/javascript" src="{{script_src}}"></script>
 
   <title>
     {{#if title}}
@@ -23,36 +42,54 @@
     {{else}}
       ExploreTO
     {{/if}}
-
   </title>
 </head>
 
 <body>
+  <header>
+
+  </header>
+
   <main>
     {{{body}}}
   </main>
 
   <footer>
-    {{{footer}}}
+    <div class="container">
+      <div class="row hidden-xs">
+        <h1>ExploreTO Statistics</h1>
+      </div> <!-- .row -->
+      <div class="row statistics hidden-xs">
+        <div class="col-md-2 col-sm-2 col-xs-offset-1 dotted-right"><h4>Team Members</h4><h5>9</h5></div>
+        <div class="col-md-2 col-sm-2 dotted-right">
+          <h4>Team Members</h4>
+          <h5>9</h5>
+        </div>
+        <div class="col-md-2 col-sm-2 dotted-right">
+          <h4>Vitamin Waters</h4>
+          <h5>32</h5>
+        </div>
+        <div class="col-md-2 col-sm-2 dotted-right">
+          <h4>Pivots</h4>
+          <h5>26</h5>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <h4>Sudos</h4>
+          <h5>42</h5></div>
+      </div> <!-- .row -->
+
+      <div class="row twitter-feed hidden-sm hidden-xs">
+        <div class="col-md-11 col-xs-push-1"><p><a href="#">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate explicabo facilis ipsum, doloremque aliquid, totam reiciendis architecto nam velit, quam optio consequatur harum, quae eos aliquam atque labore at tempora." - <em>Explore TO</em></a></p></div>
+        <div class="col-md-1 col-md-pull-11"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></div>
+      </div> <!-- .row.twitter-feed -->
+
+
+      <div class="row copyright">
+          <div class="col-xs-12"><p>&nbsp; Copyright 2014. Explore TO.</p>
+          </div> <!-- .row.copyright -->
+      </div>
+    </div> <!-- .container -->
   </footer>
-
-  <script type="text/javascript" src="/client/vendor/angular-file-upload-shim.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-  <script type="text/javascript" src="/client/vendor/angular-file-upload.min.js"></script>
-  <script type="text/javascript" src="/client/vendor/angular-bootstrap.js"></script>
-  <script type="text/javascript" src="{{script_src}}"></script>
-
-  <script type="text/javascript" src="/client/vendor/angular-file-upload-shim.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-  <script type="text/javascript" src="/client/vendor/angular-file-upload.min.js"></script>
-  <script type="text/javascript" src="/client/vendor/angular-bootstrap.js"></script>
-  <script type="text/javascript" src="{{script_src}}"></script>
-
-  <!-- Facebook -->
-  {{#if facebook}}
-    <script type="text/javascript" src="/client/lib/angular-facebook.js"></script>
-    <script type="text/javascript" src="/client/lib/app.config.js"></script>
-  {{/if}}
 </body>
 
 </html>
