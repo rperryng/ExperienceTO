@@ -31,14 +31,14 @@
         });
     }
 
-    function onFileSelect($file) {
-      console.log('on file selected', $file);
+    function onFileSelect(files) {
+      console.log('on file selected', files);
 
-      if (!$file) {
+      if (!files || !files[0]) {
         return;
       }
 
-      vm.uploadedFile = signupBusinessFactory.uploadImage($file)
+      vm.uploadedFile = signupBusinessFactory.uploadImage('facebook', files[0])
         .then(function () {
           console.log('success');
         }, function () {
@@ -90,7 +90,7 @@
 
     function uploadImage(business, image) {
       var deferred = $q.defer();
-      var url = ENDPOINT + '/image/' + business;
+      var url = '/api/businesses/image';
 
       $upload.upload({
         url: url,

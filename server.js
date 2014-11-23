@@ -3,15 +3,17 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://104.236.63.85:27017/ExperienceTO')
+mongoose.connect('mongodb://104.236.63.85:27017/ExperienceTO');
 
 // subapps
 var registerConsumer = require('./server/components/signup_user');
 var registerBusiness = require('./server/components/signup_business');
 var registerBusinessApi = require('./server/api/businesses');
+var registerBusinessPicture = require('./server/api/businessesImage');
 
 var app = express();
 
+// parse url encoded form data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -33,6 +35,7 @@ app.set('view engine', 'hbs');
 app.use(registerConsumer);
 app.use(registerBusiness);
 app.use(registerBusinessApi);
+app.use(registerBusinessPicture);
 
 // No other middlware handled the request, send a 404
 app.use(function (req, res) {
