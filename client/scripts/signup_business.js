@@ -86,18 +86,10 @@
           markers = [];
           var bounds = new google.maps.LatLngBounds();
           for (var i = 0, place; place = places[i]; i++) {
-            var image = {
-              url: '/client/assets/images/map-marker.png',
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(35, 35)
-            };
 
             // Create a marker for each place.
             var marker = new google.maps.Marker({
               map: map,
-              icon: image,
               title: place.name,
               position: place.geometry.location
             });
@@ -106,8 +98,11 @@
 
             bounds.extend(place.geometry.location);
 
-            console.log(marker)
-            console.log(marker.getPosition());
+            if (places.length === 1) {
+              var markerPosition = marker.getPosition();
+              vm.latitude = markerPosition.k;
+              vm.longitude = markerPosition.B;
+            }
           }
 
           map.fitBounds(bounds);
@@ -120,11 +115,15 @@
               position.coords.longitude
             );
 
-            var infoWindow = new google.maps.InfoWindow({
-              map: map,
-              position: pos,
-              content: 'Location found using HTML5'
+            var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map
             });
+
+            vm.latitude = position.coords.latitude;
+            vm.longitude = position.coords.longitude;
 
             map.setCenter(pos);
           }, function () {
