@@ -39,8 +39,9 @@
       }
 
       vm.uploadedFile = signupBusinessFactory.uploadImage('facebook', files[0])
-        .then(function () {
-          console.log('success');
+        .then(function (url) {
+          vm.imageSource = url;
+          console.log('image souce', vm.imageSource);
         }, function () {
           console.log('failed');
         });
@@ -91,17 +92,18 @@
 
     function uploadImage(business, image) {
       var deferred = $q.defer();
-      var url = '/api/businesses/image';
+      var url = '/api/businesses/images';
+      var filename = 'business';
 
       $upload.upload({
         url: url,
-        file: image
-
+        file: image,
+        filename: filename,
+        fileFormDataName: filename
       }).progress(function (evt) {
         console.log('... ' + parseInt((100 * evt.loaded) / evt.total));
-      }).success(function (data) {
-        deferred.resolve();
-        console.log('done uploading image');
+      }).success(function (uploadedImageUrl) {
+        deferred.resolve(uploadedImageUrl);
       }).error(function (err) {
         deferred.reject();
         console.log('err...', err);
@@ -109,5 +111,6 @@
 
       return deferred.promise;
     }
+
   }
 })();
