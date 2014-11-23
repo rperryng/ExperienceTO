@@ -29,5 +29,5 @@ node_modules
 # Mac images
 .DS_Store
 
-# Uploaded images
+# Ignore uploaded images
 server/api/businessesImage/images
