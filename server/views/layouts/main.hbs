@@ -7,10 +7,10 @@
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <!-- Vendor -->
+  <!-- Styles and fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Megrim' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Megrim" rel="stylesheet" type="text/css">
 
   <!-- custom -->
   <link rel="stylesheet" href="/client/styles/theme.css">
@@ -23,7 +23,8 @@
 
   <!-- Google maps -->
   {{#if googleMaps}}
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6qAklH9vlA9zpwQOFkqrZmdzORMrPsE"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6qAklH9vlA9zpwQOFkqrZmdzORMrPsE&libraries=places"></script>
+    <script type="text/javascript" src="/client/scripts/fontawesome-markers.js"></script>
   {{/if}}
 
   <!-- Facebook -->

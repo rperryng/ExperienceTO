@@ -11,9 +11,9 @@
     .module('ExploreTO')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$scope', '$http', 'facebook', 'userSignupFactory'];
+  MainController.$inject = ['$scope', 'facebook', 'userSignupFactory'];
 
-  function MainController($scope, $http, facebook, userSignupFactory) {
+  function MainController($scope, facebook, userSignupFactory) {
     var vm = this;
 
     console.log('listening');
@@ -39,6 +39,11 @@
             vm.facebookUserId = me.id;
             vm.firstName = me.first_name;
 
+            userSignupFactory.getUser(me.id)
+              .then(function () {
+                console.log('got success');
+              });
+
             userSignupFactory.registerUser(me)
               .then(function () {
                 console.log('success');
@@ -60,7 +65,8 @@
 
   function userSignupFactory($q, $http) {
     var factory = {
-      registerUser: registerUser
+      registerUser: registerUser,
+      getUser: getUser
     };
 
     return factory;
@@ -72,6 +78,21 @@
       var url = '/api/signup/user';
 
       $http.post(url, me)
+        .success(function () {
+          deferred.resolve();
+        })
+        .error(function () {
+          deferred.reject();
+        });
+
+      return deferred.promise;
+    }
+
+    function getUser(id) {
+      var deferred = $q.defer();
+      var url = '/api/user/' + id;
+
+      $http.get(url)
         .success(function () {
           deferred.resolve();
         })

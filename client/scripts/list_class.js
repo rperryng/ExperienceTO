@@ -11,15 +11,63 @@
     .module('listClasses')
     .controller('listClassesController', listClassesController);
 
-  listClassesController.$inject = ['$scope', '$http'];
+  listClassesController.$inject = ['$scope', '$http', 'listClassesFactory'];
 
-  function listClassesController($scope, $http) {
+  function listClassesController($scope, $http, listClassesFactory) {
     var vm = this;
+
+    activate();
+
+    //////////
+
+    function activate() {
+      listClassesFactory.getClasses()
+        .then(function (classes) {
+          vm.classes = classes;
+        }, function () {
+          console.log('couldn\'t get classes ...');
+        });
+    }
 
     $http.get('api/business/classes').success(function (data) {
       vm.classes = data;
-      console.log("success", data);
+      console.log('success', data);
     });
+  }
+})();
+
+(function () {
+  'use strict';
+
+  angular
+    .module('listClasses')
+    .factory('listClassesFactory', listClassesFactory);
+
+  listClassesFactory.$inject = ['$q', '$http'];
+
+  function listClassesFactory($q, $http) {
+    var factory = {
+      getClasses: getClasses
+    };
+
+    return factory;
+
+    //////////
+
+    function getClasses() {
+      var deferred = $q.defer();
+      var url = '/api/business/classes';
+
+      $http.get(url)
+        .success(function (data) {
+          deferred.resolve(data);
+        })
+        .error(function () {
+          deferred.reject();
+        });
+
+      return deferred.promise;
+    }
   }
 })();
 
@@ -55,9 +103,7 @@
     }
 
     function handleNoGeolocation(errorFlag) {
-      var content = errorFlag
-        ? 'Error: The geolocation service failed.'
-        : 'Error: Your browser doesn\'t support geolocation';
+      var content = errorFlag ? 'Error: The geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation';
 
       var options = {
         map: map,
