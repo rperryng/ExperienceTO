@@ -13,11 +13,16 @@ app.get('/api/business/classes', function (req, res) {
 	});
 });
 
-app.get('/api/business/class/:id/usercode/:userCode', function (req, res) {
+app.get('/api/business/class/:id/:userCode', function (req, res) {
 	var id = req.params['id'];
 	var userCode = req.params['userCode'];
 
-	Class.findOne({id: id}).exec(function (err, classObject) {
+	//TODO:
+	//In the future this code should consider:
+	//- Is valid month?
+	//- Is ticket never used?
+	//- User and Class have valid code?
+	Class.findOne({_id: id}).exec(function (err, classObject) {
 		if (err) {
 			res.sendStatus(500);
 			return;

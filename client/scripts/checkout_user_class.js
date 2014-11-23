@@ -57,7 +57,7 @@
     // //////////
     function searchForUserCode(classId, code) {
       var deferred = $q.defer();
-      var url = '/api/business/class/'+classId+'/usercode/'+code;
+      var url = '/api/business/class/'+classId+'/'+code;
 
       $http.get(url).success(function (data) {
           console.log("suc", data)
