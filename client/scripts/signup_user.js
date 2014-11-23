@@ -27,7 +27,7 @@
 
       facebook.login().then(function (connected) {
         if (connected) {
-          getMe();
+//          getMe();
         } else {
           console.log("Error when was trying to log in on facebook.");
         }
