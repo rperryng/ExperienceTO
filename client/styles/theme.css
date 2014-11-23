@@ -3,10 +3,67 @@ h1 {
 }
 
 .signupBusiness-view {
-  margin: 200px auto 0;
+  margin: 0 auto;
   max-width: 500px;
 }
 
 .main-view {
 
+}
+
+.circle-icon {
+  font-size: 70pt;
+  color: white;
+  text-align: center;
+}
+
+.circle-bar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px; 
+  margin: 0 auto;
+  position: relative;
+  top: -70px;
+  padding-top: 10px;
+}
+
+.bg-orange {
+  background: #D75D31;
+}
+
+.bus-sign-head  {
+  background: url('/client/assets/images/toronto-blur-small.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center bottom;
+  background-attachment: fixed;
+  height: 500px;
+  border-bottom: 10px solid #D75D31;
+}
+
+.logo {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 35%;
+}
+
+.logo > img  {
+  max-width: 45%;
+}
+
+
+/*----Media Queries----*/
+
+@media (min-width: @screen-sm-min) {
+  .circle-bar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px; 
+    padding-top: 10px;
+  } 
+  .bg-orange {
+  background: red;
+  }
 }
