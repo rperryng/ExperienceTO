@@ -46,10 +46,6 @@ p {
   width: 100%;
 }
 
-btn-primary {
-
-}
-
 .circle-icon {
 	font-size: 70pt;
 	color: white;
@@ -73,12 +69,23 @@ btn-primary {
 
 .bus-sign-head  {
 	background: url('/client/assets/images/toronto-blur-small.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-	background-position:center bottom;
-	background-attachment: fixed;
-	height: 500px;
-	border-bottom: 10px solid #D75D31;
+  height: 500px;
+}
+
+.pick-course-head {
+  background: url('/client/assets/images/foodie.jpg');
+  color: white;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  padding: 35px;
+}
+
+.bus-sign-head, .pick-course-head {
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center bottom;
+  background-attachment: fixed;
+  border-bottom: 10px solid #D75D31;
 }
 
 /*HEADER*/
@@ -172,10 +179,14 @@ footer h1 {
 
   .bus-sign-head  {
     background: url('/client/assets/images/toronto-blur-small.jpg');
+  }
+
+  .bus-sign-head, .pick-course-head {
     height: 300px;
     border-bottom: 10px solid #D75D31;
     background-position: top;
   }
+
   .circle-icon {
   font-size: 30pt;
   color: white;

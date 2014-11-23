@@ -1,11 +1,26 @@
-<div class="listClasses-view row" ng-app="listClasses" ng-controller="listClassesController as listClass">
-	<div class="col-md-4" style="max-width:300px;padding:20px" ng-repeat="class in listClass.classes">
-		<div class="text-center"><img ng-src="\{{class.class_logo}}"/></div>
-		<div class="text-center"><strong>
-			<span class="text-center">\{{class.name}} -</span>
-			<span>\{{class.duration}} minutes</span>
-		</strong></div>
-		<div>\{{class.description | limitTo: 140}}</div>
-		
-	</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 pick-course-head">
+      <h1> What tickles your fancy?</h1>
+      <p>5 unique Toronto experiences monthly.<br>
+          You choose one.<br>
+          Invite a friend & make it a date night options.<br>
+          Share your feedback with us and the community!</p>
+    </div>
+  </div>
 </div>
+
+<div class="container">
+  <div class="listClasses-view row" ng-app="listClasses" ng-controller="listClassesController as listClass">
+  	<div class="row" ng-repeat="class in listClass.classes">
+      <div class="col-md-2"><img ng-src="\{{class.class_logo}}"/></div>
+  		
+  		<div class="col-md-10">
+  			<span><h3>\{{class.name}} -</h3></span>
+  			<span>\{{class.duration}} minutes</span>
+  		</div>
+  		<div>\{{class.description | limitTo: 140}}</div>	
+  	</div>
+  </div>
+</div>
+
