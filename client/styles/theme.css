@@ -118,12 +118,49 @@ btn-primary {
 	color: #D75D31;
 }
 
+/* LANDING PAGE - CALL TO ACTION*/
+
+.call-to-action {
+	margin-top: 50px;
+}
+
+.call-to-action h1 {
+	color: #D75D31;
+	text-align: center;
+}
+
+.register {
+	padding: 50px;
+	border: 1px solid #EEE;
+	margin-top: 25px;
+}
+
+button {
+  background: #D75D31;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #589B1E;
+}
+
+button a:link, button a:visited, button a:hover, button a:active {
+	color: #FFF;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
 /*FOOTER*/
 
 footer {
 	background: #666;
 	color: #FFF;
-	/*margin-top: 50px;*/
+	margin-top: 50px;
 	padding: 25px;
 }
 
