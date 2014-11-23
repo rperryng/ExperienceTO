@@ -1,68 +1,107 @@
 (function () {
-	'use strict';
+  'use strict';
 
-	angular.module('ExploreTO', ['facebook']);
+  angular.module('ExploreTO', ['facebook']);
 })();
 
 (function () {
-	'use strict';
+  'use strict';
 
-	angular
-		.module('ExploreTO')
-		.controller('MainController', MainController);
+  angular
+    .module('ExploreTO')
+    .controller('MainController', MainController);
 
-	MainController.$inject = ['$scope', '$http', 'facebook'];
+  MainController.$inject = ['$scope', 'facebook', 'userSignupFactory'];
 
-	function MainController($scope, $http, facebook) {
-		var ENDPOINT = '/api/signup/user';
-		var vm = this;
+  function MainController($scope, facebook, userSignupFactory) {
+    var vm = this;
 
-		console.log('listening');
-		var stopListening = $scope.$on('facebookReady', onFacebookReady);
+    console.log('listening');
+    var stopListening = $scope.$on('facebookReady', onFacebookReady);
 
-		//////////
+    //////////
 
-		function onFacebookReady() {
-			console.log('done...');
-			stopListening();
+    function onFacebookReady() {
+      console.log('done...');
+      stopListening();
 
-			facebook.login().then(function (connected) {
-				if (connected) {
-					getMe();
-				} else {
-					console.log("Error when was trying to log in on facebook.");
-				}
-			});
+      facebook.login().then(function (connected) {
+        if (connected) {
+          getMe();
+        } else {
+          console.log("Error when was trying to log in on facebook.");
+        }
+      });
 
-			function getMe() {
-				facebook.getMe()
-					.then(function (me) {
-						$scope.loggedUser = me;
+      function getMe() {
+        facebook.getMe()
+          .then(function (me) {
+            vm.facebookUserId = me.id;
+            vm.firstName = me.first_name;
 
-						$http.get('/api/user/'+me.id).
-						  success(function(data, status, headers, config) {
-						  	console.log("Success2", data)
-						    // this callback will be called asynchronously
-						    // when the response is available
-						  }).
-						  error(function(data, status, headers, config) {
-						    // called asynchronously if an error occurs
-						    // or server returns response with an error status.
-						    console.log("2Error when was trying to save the logged user.");
-						  });
+            userSignupFactory.getUser(me.id)
+              .then(function () {
+                console.log('got success');
+              });
 
-						$http.post(ENDPOINT, me)
-					        .success(function (response) {
-					          console.log("Success")
-					        })
-					        .error(function (response) {
-					          console.log("Error when was trying to save the logged user.");
-					        });
+            userSignupFactory.registerUser(me)
+              .then(function () {
+                console.log('success');
+              });
+          });
+      }
+    }
+  }
+})();
 
-					}, function (error) {
+(function () {
+  'use strict';
 
-					});
-			}
-		}
-	}
+  angular
+    .module('ExploreTO')
+    .factory('userSignupFactory', userSignupFactory);
+
+  userSignupFactory.$inject = ['$q', '$http'];
+
+  function userSignupFactory($q, $http) {
+    var factory = {
+      registerUser: registerUser,
+      getUser: getUser
+    };
+
+    return factory;
+
+    //////////
+
+    function registerUser(me) {
+      var deferred = $q.defer();
+      var url = '/api/signup/user';
+
+      $http.post(url, me)
+        .success(function () {
+          deferred.resolve();
+        })
+        .error(function () {
+          deferred.reject();
+        });
+
+      return deferred.promise;
+    }
+
+    function getUser(id) {
+      var deferred = $q.defer();
+      var url = '/api/user/' + id;
+
+      $http.get(url)
+        .success(function () {
+          deferred.resolve();
+        })
+        .error(function () {
+          deferred.reject();
+        });
+
+      return deferred.promise;
+    }
+  }
+
 })();

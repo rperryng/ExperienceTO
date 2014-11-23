@@ -1,7 +1,7 @@
 <div ng-app="ExploreTO" ng-controller="MainController as main">
-  \{{loggedUser.first_name}}
+  \{{main.firstName}}
 
-  <img ng-src="https://graph.facebook.com/\{{loggedUser.id}}/picture?type=small"/>
-  <img ng-src="https://graph.facebook.com/\{{loggedUser.id}}/picture?type=normal"/>
-  <img ng-src="https://graph.facebook.com/\{{loggedUser.id}}/picture?type=large"/>
+  <img ng-src="https://graph.facebook.com/\{{main.facebookUserId}}/picture?type=small"/>
+  <img ng-src="https://graph.facebook.com/\{{main.facebookUserId}}/picture?type=normal"/>
+  <img ng-src="https://graph.facebook.com/\{{main.facebookUserId}}/picture?type=large"/>
 </div>
