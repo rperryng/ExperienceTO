@@ -5,5 +5,5 @@ var app = module.exports = express();
 app.set('views', __dirname);
 
 app.get('/', function (req, res) {
- res.render('landing_page');
+	res.sendFile(__dirname + '/landing_page.html');
 });
