@@ -23,7 +23,7 @@
     //////////
 
     function submit() {
-      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile)
+      signupBusinessFactory.registerBusiness(vm.name, vm.email, vm.phone, vm.uploadedFile, vm.about)
         .then(function () {
           console.log('good');
         }, function () {
@@ -31,16 +31,17 @@
         });
     }
 
-    function onFileSelect($file) {
-      console.log('on file selected', $file);
+    function onFileSelect(files) {
+      console.log('on file selected', files);
 
-      if (!$file) {
+      if (!files || !files[0]) {
         return;
       }
 
-      vm.uploadedFile = signupBusinessFactory.uploadImage($file)
-        .then(function () {
-          console.log('success');
+      vm.uploadedFile = signupBusinessFactory.uploadImage('facebook', files[0])
+        .then(function (url) {
+          vm.imageSource = url;
+          console.log('image souce', vm.imageSource);
         }, function () {
           console.log('failed');
         });
@@ -69,12 +70,13 @@
 
     //////////
 
-    function registerBusiness(companyName, email, phone) {
+    function registerBusiness(companyName, email, phone, about) {
       var deferred = $q.defer();
       var data = {
         name: companyName,
         email: email,
-        phone: phone
+        phone: phone,
+        description: about
       };
 
       $http.post(ENDPOINT, data)
@@ -90,17 +92,18 @@
 
     function uploadImage(business, image) {
       var deferred = $q.defer();
-      var url = ENDPOINT + '/image/' + business;
+      var url = '/api/businesses/images';
+      var filename = 'business';
 
       $upload.upload({
         url: url,
-        file: image
-
+        file: image,
+        filename: filename,
+        fileFormDataName: filename
       }).progress(function (evt) {
         console.log('... ' + parseInt((100 * evt.loaded) / evt.total));
-      }).success(function (data) {
-        deferred.resolve();
-        console.log('done uploading image');
+      }).success(function (uploadedImageUrl) {
+        deferred.resolve(uploadedImageUrl);
       }).error(function (err) {
         deferred.reject();
         console.log('err...', err);
@@ -108,5 +111,6 @@
 
       return deferred.promise;
     }
+
   }
 })();
