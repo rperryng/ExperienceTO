@@ -3,7 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://104.236.63.85:27017/ExperienceTO')
+mongoose.connect('mongodb://104.236.63.85:27017/ExperienceTO');
 
 // subapps
 var registerConsumer = require('./server/components/signup_user');
