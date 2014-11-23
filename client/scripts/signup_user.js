@@ -25,13 +25,13 @@
       console.log('done...');
       stopListening();
 
-      facebook.login().then(function (connected) {
-        if (connected) {
+//      facebook.login().then(function (connected) {
+//        if (connected) {
 //          getMe();
-        } else {
-          console.log("Error when was trying to log in on facebook.");
-        }
-      });
+//        } else {
+//          console.log("Error when was trying to log in on facebook.");
+//        }
+//      });
 
       function getMe() {
         facebook.getMe()
