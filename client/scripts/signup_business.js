@@ -39,7 +39,8 @@
         pictureUrl: vm.imageSource,
         description: vm.about,
         latitude: vm.latitude,
-        longitude: vm.longitude
+        longitude: vm.longitude,
+        duration: 90
       };
 
       signupBusinessFactory.registerBusiness(data)

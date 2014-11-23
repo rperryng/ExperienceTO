@@ -22,7 +22,8 @@ var businessSchema = mongoose.Schema({
   longitude: Number,
   description: String,
   postalCode: String,
-  pictureUrl: String
+  pictureUrl: String,
+  duration: Number
 });
 
 module.exports = mongoose.model('Business', businessSchema);
