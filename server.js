@@ -3,12 +3,14 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-//mongoose.connect('mongodb://localhost:27017/ExperienceTO')
+mongoose.connect('mongodb://104.236.63.85:27017/ExperienceTO');
 
 // subapps
 var registerConsumer = require('./server/components/signup_user');
 var registerBusiness = require('./server/components/signup_business');
+var registerBusinessClass = require('./server/components/list_class');
 var registerBusinessApi = require('./server/api/businesses');
+var registerClassApi = require('./server/api/classes');
 
 var app = express();
 
@@ -32,15 +34,17 @@ app.set('view engine', 'hbs');
 // conmponent middleware
 app.use(registerConsumer);
 app.use(registerBusiness);
+app.use(registerBusinessClass);
 app.use(registerBusinessApi);
+app.use(registerClassApi);
 
 // No other middlware handled the request, send a 404
 app.use(function (req, res) {
   res.sendStatus(404);
 });
 
-var port = 3000;
+var port = 80;
 app.listen(port, function () {
-  console.log('business ideas happen at port', 3000);
+  console.log('business ideas happen at port', port);
 });
 
