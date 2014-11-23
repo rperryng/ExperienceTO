@@ -59,13 +59,13 @@
       var deferred = $q.defer();
       var url = '/api/business/class/'+classId+'/usercode/'+code;
 
-      $http.get(url, code)
-        .success(function () {
+      $http.get(url).success(function (data) {
+          console.log("suc", data)
           deferred.resolve();
-        })
-        .error(function () {
+        }).error(function () {
+          console.log("err")
           deferred.reject();
-        });
+      });
 
       return deferred.promise;
     }

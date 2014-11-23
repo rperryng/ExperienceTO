@@ -14,11 +14,14 @@ app.get('/api/business/classes', function (req, res) {
 });
 
 app.get('/api/business/class/:id/usercode/:userCode', function (req, res) {
-	Class.find({}).limit(5).exec(function (err, classes) {
+	var id = req.params['id'];
+	var userCode = req.params['userCode'];
+
+	Class.findOne({id: id}).exec(function (err, classObject) {
 		if (err) {
 			res.sendStatus(500);
 			return;
 		}
-		res.status(200).json(classes);
+		res.status(200).json(classObject);
 	});
 });
