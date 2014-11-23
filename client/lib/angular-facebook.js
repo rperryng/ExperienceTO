@@ -103,7 +103,7 @@
 
         //More facebook user data at: https://developers.facebook.com/docs/facebook-login/permissions/v2.2
         var params = {
-          fields: ['first_name, id']
+          fields: ['first_name, id, location']
         };
 
         FB.api('/me', params, function (response) {

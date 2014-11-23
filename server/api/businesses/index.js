@@ -16,6 +16,13 @@ app.post('/api/signup/businesses', function (req, res) {
   });
 });
 
-app.post('/api/signup/businesses/image/:id', function (req, res) {
+app.get('/api/signup/businesses', function (req, res) {
+  Business.find({}, function (err, result) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
 
+    res.json(result);
+  });
 });

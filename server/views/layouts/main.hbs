@@ -7,9 +7,10 @@
   <meta name="description" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+  <!-- Styles and fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Megrim' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Megrim" rel="stylesheet" type="text/css">
 
   <!-- custom -->
   <link rel="stylesheet" href="/client/styles/theme.css">
@@ -19,8 +20,13 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
   <script type="text/javascript" src="/client/vendor/angular-file-upload.min.js"></script>
   <script type="text/javascript" src="/client/vendor/angular-bootstrap.js"></script>
-  <script type="text/javascript" src="{{script_src}}"></script>
-    <script type="text/javascript" src="/client/scripts/menu.js"></script>
+  <script type="text/javascript" src="/client/scripts/menu.js"></script>
+
+  <!-- Google maps -->
+  {{#if googleMaps}}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw6qAklH9vlA9zpwQOFkqrZmdzORMrPsE&libraries=places"></script>
+    <script type="text/javascript" src="/client/scripts/fontawesome-markers.js"></script>
+  {{/if}}
 
   <!-- Facebook -->
   {{#if facebook}}
@@ -28,13 +34,15 @@
     <script type="text/javascript" src="/client/lib/app.config.js"></script>
   {{/if}}
 
+  <!-- Alwas load page-specific script last, after all libraries loaded -->
+  <script type="text/javascript" src="{{script_src}}"></script>
+
   <title>
     {{#if title}}
       {{title}}
     {{else}}
       ExploreTO
     {{/if}}
-
   </title>
 </head>
 
