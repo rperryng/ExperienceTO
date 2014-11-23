@@ -10,7 +10,7 @@
   <div class="row">
     <!-- left column -->
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <div class="text-center">
+      <div class="text-center upload-text">
         <img src="/client/assets/images/dana.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
         <input type="file" class="text-center center-block well well-sm">
@@ -19,7 +19,7 @@
     <!-- edit form column -->
     <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
       <div class="alert alert-info alert-dismissable">
-        <a class="panel-close close" data-dismiss="alert">Ã—</a>
+        <a class="panel-close close"></a>
         <i class="fa fa-compass"></i>
         Fill out your social profile below to get started.
       </div>
@@ -85,16 +85,26 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-md-3 control-label">Interests</label>
+          <div class="col-md-8">
+          <!-- <tags-input ng-model="tags"></tags-input> -->
+            <input class="form-control" ng-model="tags" data-role="tagsinput">
+          </div>
+        </div>
+        <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
             <input class="btn btn-primary" value="Save Changes" type="button">
             <span></span>
             <input class="btn btn-default" value="Cancel" type="reset">
-          </div>
-        </div>
+          </div> <!-- .col-md-3.control-label -->
+        </div> <!-- .form-group -->
       </form>
     </div>
   </div>
 </div>
 
 </div>
+
+	<script type="text/javascript" src="/client/scripts/bootstrap-tagsinput.js"></script>
+

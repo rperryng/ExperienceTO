@@ -13,6 +13,7 @@
     "express": "^4.10.2",
     "express-handlebars": "^1.1.0",
     "mongoose": "^3.8.19",
-    "multer": "^0.1.6"
+    "multer": "^0.1.6",
+    "ng-tags-input": "^2.1.1"
   }
 }
