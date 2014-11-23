@@ -11,9 +11,10 @@
 		.module('ExploreTO')
 		.controller('MainController', MainController);
 
-	MainController.$inject = ['$scope', 'facebook'];
+	MainController.$inject = ['$scope', '$http', 'facebook'];
 
-	function MainController($scope, facebook) {
+	function MainController($scope, $http, facebook) {
+		var ENDPOINT = '/api/signup/user';
 		var vm = this;
 
 		console.log('listening');
@@ -29,7 +30,7 @@
 				if (connected) {
 					getMe();
 				} else {
-					// error logging in
+					console.log("Error when was trying to log in on facebook.");
 				}
 			});
 
@@ -37,6 +38,16 @@
 				facebook.getMe()
 					.then(function (me) {
 						$scope.loggedUser = me;
+
+						$http.post(ENDPOINT, me)
+					        .success(function (response) {
+					          console.log("Success")
+					          console.log(me)
+					        })
+					        .error(function (response) {
+					          console.log("Error when was trying to save the logged user.");
+					        });
+
 					}, function (error) {
 
 					});

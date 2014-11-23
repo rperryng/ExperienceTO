@@ -1,11 +1,16 @@
-<div class="listClasses-view row" ng-app="listClasses" ng-controller="listClassesController as listClass">
-	<div class="col-md-4" style="max-width:300px;padding:20px" ng-repeat="class in listClass.classes">
-		<div class="text-center"><img ng-src="\{{class.class_logo}}"/></div>
-		<div class="text-center"><strong>
-			<span class="text-center">\{{class.name}} -</span>
-			<span>\{{class.duration}} minutes</span>
-		</strong></div>
-		<div>\{{class.description | limitTo: 140}}</div>
+<div class="listClasses-view" ng-app="listClasses" ng-controller="listClassesController as listClass">
+	<div>
 		
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" style="max-width:300px;padding:20px" ng-repeat="class in listClass.classes">
+			<div class="text-center"><img ng-src="\{{class.class_logo}}"/></div>
+			<div class="text-center"><strong>
+				<span class="text-center">\{{class.name}} -</span>
+				<span>\{{class.duration}} minutes</span>
+			</strong></div>
+			<div>\{{class.description | limitTo: 140}}</div>
+		</div>
 	</div>
 </div>
