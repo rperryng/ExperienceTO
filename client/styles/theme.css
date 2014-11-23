@@ -1,35 +1,35 @@
 /*BASE STYLES*/
 
 body {
-	font-family: 'Roboto Slab';
-	font-weight: 300;
-	color: #666;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  color: #666;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Megrim';
+  font-family: 'Megrim';
 }
 
 h1 {
-	font-size: 50px;
+  font-size: 50px;
 }
 
 p {
-	line-height: 1.8em;
+  line-height: 1.8em;
 }
 
 .logo-svg {
-	text-align: center;
-	position: relative;
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	transform: translateY(-50%); /* This would be overwritten */
-	transform: translateX(-50%); /* By this.. */
-	display: table-cell;
-	vertical-align: middle;
-	width: 40%;
-	z-index: 999;
+  text-align: center;
+  position: relative;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateY(-50%); /* This would be overwritten */
+  transform: translateX(-50%); /* By this.. */
+  display: table-cell;
+  vertical-align: middle;
+  width: 40%;
+  z-index: 999;
 }
 
 /*END BASE STYLES*/
@@ -82,28 +82,28 @@ p {
 }
 
 .circle-icon {
-	font-size: 70pt;
-	color: white;
-	text-align: center;
+  font-size: 70pt;
+  color: white;
+  text-align: center;
 }
 
 .circle-bar {
-	border-radius: 50%;
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
-	position: relative;
-	top: -70px;
-	padding-top: 10px;
-	margin-bottom: -70px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  top: -70px;
+  padding-top: 10px;
+  margin-bottom: -70px;
 }
 
 .bg-orange {
-	background: #D75D31;
+  background: #D75D31;
 }
 
 .bus-sign-head  {
-	background: url('/client/assets/images/toronto-blur-small.jpg');
+  background: url('/client/assets/images/toronto-blur-small.jpg');
   height: 500px;
 }
 
@@ -126,71 +126,71 @@ p {
 /*HEADER*/
 
 .logo {
-	margin: 0 auto;
-	width: 100%;
-	text-align: center;
-	position: relative;
-	top: 35%;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 35%;
 }
 
 .logo > img  {
-	max-width: 45%;
+  max-width: 45%;
 }
 
 /*LANDING PAGE - ABOUT SECTION*/
 
 .about {
-	background: #FFF;
+  background: #FFF;
 }
 
 .about h1 {
-	margin-top: 50px;
-	color: #D75D31;
+  margin-top: 50px;
+  color: #D75D31;
 }
 
 /*LANDING PAGE - FEATURES SECTION*/
 
 .features {
-	margin-top: 50px;
-	padding: 50px 0;
-	background: #EEE;
+  margin-top: 50px;
+  padding: 50px 0;
+  background: #EEE;
 }
 
 .feature-icon {
-	color: #D75D31;
+  color: #D75D31;
 }
 
 /*FOOTER*/
 
 footer {
-	background: #666;
-	color: #FFF;
-	/*margin-top: 50px;*/
-	padding: 25px;
+  background: #666;
+  color: #FFF;
+  /*margin-top: 50px;*/
+  padding: 25px;
 }
 
 footer h1, footer h2, footer h3, footer h4, footer h6 {
-	font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab';
 }
 
 footer h4 {
-	font-size: 1em;
-	text-align: center;
+  font-size: 1em;
+  text-align: center;
 }
 
 footer h5 {
-	font-size: 4em;
-	text-align: center;
+  font-size: 4em;
+  text-align: center;
 }
 
 footer h1 {
-	font-size: 12px;
-	padding-bottom: 10px;
-	border-bottom: 1px dotted #CCC;
+  font-size: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #CCC;
 }
 
 .dotted-right {
-	border-right: 1px dotted #CCC;
+  border-right: 1px dotted #CCC;
 }
 
 
@@ -236,4 +236,9 @@ footer h1 {
     .logo > img  {
     max-width: 70%;
   }
+}
+
+/* GOOGLE MAPS */
+#google-maps-view {
+ height: 400px;
 }
